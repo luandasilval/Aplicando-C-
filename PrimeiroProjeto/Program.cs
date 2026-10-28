@@ -133,20 +133,41 @@ using System.Globalization;
 
 //*metodos
 
-void ExibirMensagem()
-{
-	Console.WriteLine("Hello, world");
-}
-ExibirMensagem();
+// void ExibirMensagem()
+// {
+// 	Console.WriteLine("Hello, world");
+// }
+// ExibirMensagem();
 
-void ExibirNome(string nome)
-{
-	Console.WriteLine($"Olá, {nome}!");
-}
-ExibirNome("Samuel");
+// void ExibirNome(string nome)
+// {
+// 	Console.WriteLine($"Olá, {nome}!");
+// }
+// ExibirNome("Samuel");
 
-int Somar(int a, int b)
-{
-	return a+ b;
-	Console.WriteLine($"{a+b}");
-}
+// int Somar(int a, int b)
+// {
+// 	if (a > 0)
+// 	{
+// 		return a + b;
+// 	}
+// 	else
+// 	{
+// 		return 0;
+// 	}
+// }
+// Console.WriteLine(Somar(5, 3));
+
+//*Arrays e coleções 
+int[] numeros = { 10, 20, 30, 40, 50 }; //instanciando o array ja definindo os seus valores e posições
+
+string[] nomes = new string[3]; //criando um array que ja possui 3 posições, sem valores definidos 
+
+nomes[0] = "Ana";
+nomes[1] = "Bruno";
+nomes[2] = "Carla";
+
+Console.WriteLine(nomes[0]);
+Console.WriteLine(nomes[1]);
+Console.WriteLine(nomes[2]);
+Console.WriteLine(nomes.Length);
