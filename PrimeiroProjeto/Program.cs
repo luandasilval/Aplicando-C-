@@ -158,16 +158,82 @@ using System.Globalization;
 // }
 // Console.WriteLine(Somar(5, 3));
 
-//*Arrays e coleções 
-int[] numeros = { 10, 20, 30, 40, 50 }; //instanciando o array ja definindo os seus valores e posições
+// //*Arrays e coleções 
+// int[] numeros = { 10, 20, 30, 40, 50 }; //instanciando o array ja definindo os seus valores e posições
 
-string[] nomes = new string[3]; //criando um array que ja possui 3 posições, sem valores definidos 
+// string[] nomes = new string[3]; //criando um array que ja possui 3 posições, sem valores definidos 
 
-nomes[0] = "Ana";
-nomes[1] = "Bruno";
-nomes[2] = "Carla";
+// nomes[0] = "Ana";
+// nomes[1] = "Bruno";
+// nomes[2] = "Carla";
 
-Console.WriteLine(nomes[0]);
-Console.WriteLine(nomes[1]);
-Console.WriteLine(nomes[2]);
-Console.WriteLine(nomes.Length);
+// Console.WriteLine(nomes[0]);
+// Console.WriteLine(nomes[1]);
+// Console.WriteLine(nomes[2]);
+// Console.WriteLine(nomes.Length);
+
+int[] numeros = { 10, 20, 30, 40 };
+for (int i = 0; i < numeros.Length; i++)
+{
+	Console.WriteLine(numeros[i]);
+}
+
+//for each 
+foreach (var numero in numeros)
+{
+	Console.WriteLine(numero);
+}
+
+
+//Lista: é uma coleção que armazeena elementos do mesmo tipo e permite aumentar ou diminuir sua quantidade durante a execução
+
+//todo List<T>  ---> Lista de tipos genéricos
+
+List<string> nomes = new List<string>();
+
+nomes.Add("Ana");
+nomes.Add("Bruno");
+nomes.Add("Carla");
+
+Console.WriteLine(nomes.Count);
+
+List<int> numbers = new List<int> { 5, 12, 18, 25, 30 };
+
+nomes.Remove("Bruno");
+
+Console.WriteLine(nomes.Count);
+Console.WriteLine(nomes.Contains("Ana"));
+
+int encontrado = numbers.Find(n => n > 20); //retorna apenas o primeiro elemento da lista que atende o critério de filtro
+
+Console.WriteLine(encontrado);
+
+string? nome_encontrado = nomes.Find(nome => nome.StartsWith("C"));
+
+Console.WriteLine(nome_encontrado);
+
+//Dicionario: dicionary<TKey, tvalue>
+Dictionary<int, string> produtos = new Dictionary<int, string>();
+
+produtos.Add(101, "Notebook");
+produtos.Add(102, "Mouse");
+produtos.Add(103, "Teclado");
+
+// Console.WriteLine(produtos[101]);
+
+if (produtos.ContainsKey(104))
+{
+	Console.WriteLine(produtos[104]);
+}
+else
+{
+	Console.WriteLine("Produto Não Encontrado");
+}
+
+foreach (var produto in produtos)
+{
+	Console.WriteLine(
+$"Código: {produto.Key} - Nome: {produto.Value}"
+
+	);
+}
